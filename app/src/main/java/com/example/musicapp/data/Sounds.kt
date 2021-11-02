@@ -5,7 +5,7 @@ import android.media.MediaPlayer
 
 data class Sounds(
     var soundTitle: String,
-    var sound: MediaPlayer,
+    var sound: MediaPlayer?,
     var isEnabled: Boolean,
     var soundValue:String,
     var backgroundColor: Color

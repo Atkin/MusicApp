@@ -156,7 +156,7 @@ fun homeScreen(navController: NavController) {
                 ) {
                     Column() {
                         Image(
-                            painter = painterResource(id = R.drawable.winter),
+                            painter = painterResource(id = R.drawable.mediaplayer),
                             contentDescription = null,
                             modifier = Modifier.clip(CircleShape)
                         )
@@ -181,7 +181,7 @@ fun homeScreen(navController: NavController) {
                 ) {
                     Column() {
                         Image(
-                            painter = painterResource(id = R.drawable.recorder),
+                            painter = painterResource(id = R.drawable.empty),
                             contentDescription = null
                         )
                         Text(

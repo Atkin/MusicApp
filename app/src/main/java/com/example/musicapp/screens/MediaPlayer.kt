@@ -66,14 +66,19 @@ class MyMediaPlayer() {
                 Button(
                     onClick = {
                         for (sound in soundsList) {
-                            if (sound.isEnabled) {
-                                sound.sound.setVolume(
-                                    getVolume(sound.soundValue.toDouble()),
-                                    getVolume(sound.soundValue.toDouble())
-                                )
-                                //  sound.sound.prepare()
-                                sound.sound.start()
-                                sound.sound.isLooping = true
+                            if (sound != null) {
+                                if (sound.isEnabled) {
+                                    sound.sound!!.setVolume(
+                                        getVolume(sound.soundValue.toDouble()),
+                                        getVolume(sound.soundValue.toDouble())
+                                    )
+                                    //  sound.sound.prepare()
+                                    sound.sound!!.start()
+                                    sound.sound!!.isLooping = true
+                                }
+                            } else {
+                                //need to update the list of Mediaplayers
+                                //sound =
                             }
                         }
                     },
@@ -90,8 +95,14 @@ class MyMediaPlayer() {
                 Button(
                     onClick = {
                         for (sound in soundsList) {
-                            if (sound.sound.isPlaying) {
-                                sound.sound.stop()
+                            //if (sound.sound.isPlaying) {
+                            //    sound.sound.stop()
+                            // }
+
+                            if (sound.sound != null) {
+                                sound.sound!!.stop()
+                                sound.sound!!.release()
+                                sound.sound = null
                             }
                         }
                     },
